@@ -50,3 +50,31 @@ Constraints:
 board.length == 9
 board[i].length == 9
 board[i][j] is a digit 1-9 or '.'.
+
+
+
+
+
+
++==============================++
+Intuition
+
+Depth-First Search (dfs).
+
+Approach
+
+The DFS explores adjacent cells and updates the board accordingly. The countAdjacentMines function calculates the number of adjacent mines for a given cell.
+
+Complexity
+
+Time complexity:
+The primary operation in the updateBoard function is the Depth-First Search (DFS). In the worst case, the DFS may visit all cells on the board. The DFS function is called for each empty cell (marked as 'E').
+
+For each empty cell, the DFS explores its neighbors, and the exploration continues until a boundary or a cell with an adjacent mine is reached. In the worst case, all cells need to be visited once. Therefore, the time complexity of the solution is O(N), where N is the total number of cells on the board.
+
+Space complexity:
+The space complexity is mainly determined by the call stack during the DFS traversal. In the worst case, the call stack could go as deep as the total number of cells on the board. Therefore, the space complexity is O(N).
+
+Additionally, the space complexity is influenced by the input parameters and variables. The vectors array is a constant-size array, so it does not contribute significantly to the space complexity. The mineCount variable and other local variables in the DFS function also have constant space requirements.
+
+In conclusion, the overall space complexity is dominated by the call stack during the DFS traversal and is O(N), where N is the total number of cells on the board.
